@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Reservation - Luxury Boutique Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">H</div>
+            <h1>Reserve Your Stay</h1>
+            <p class="subtitle">Luxury Boutique Experience</p>
+        </div>
+    </div>
+
+    <div class="form-wrapper">
+        <div class="info-box">
+            Please complete all required fields to reserve your room. Check-out
+            date must be after check-in date.
+        </div>
+
+        <form id="reservationForm" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="checkIn">
+                        Check-In Date
+                        <span class="required">*</span>
+                    </label>
+                    <input type="date" id="checkIn" name="checkIn" required />
+                    <span class="error-message" id="checkInError"
+                    >Please select a check-in date</span
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">
+                        Check-Out Date
+                        <span class="required">*</span>
+                    </label>
+                    <input type="date" id="checkOut" name="checkOut" required />
+                    <span class="error-message" id="checkOutError"
+                    >Check-out must be after check-in</span
+                    >
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="roomType">
+                        Room Type
+                        <span class="required">*</span>
+                    </label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="">Select Room Type</option>
+                        <option value="single">Single Room - $150/night</option>
+                        <option value="double">Double Room - $220/night</option>
+                        <option value="deluxe">Deluxe Suite - $350/night</option>
+                        <option value="executive">Executive Suite - $500/night</option>
+                        <option value="presidential">
+                            Presidential Suite - $800/night
+                        </option>
+                    </select>
+                    <span class="error-message" id="roomTypeError"
+                    >Please select a room type</span
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Number of Guests
+                        <span class="required">*</span>
+                    </label>
+                    <div class="guest-inputs">
+                        <div class="guest-input-group">
+                            <label for="adults">Adults</label>
+                            <div class="number-input-wrapper">
+                                <button
+                                        type="button"
+                                        class="number-btn minus"
+                                        data-input="adults"
+                                >
+                                    −
+                                </button>
+                                <input
+                                        type="number"
+                                        id="adults"
+                                        name="adults"
+                                        min="1"
+                                        max="10"
+                                        value="1"
+                                        required
+                                />
+                                <button
+                                        type="button"
+                                        class="number-btn plus"
+                                        data-input="adults"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                        <div class="guest-input-group">
+                            <label for="children">Children</label>
+                            <div class="number-input-wrapper">
+                                <button
+                                        type="button"
+                                        class="number-btn minus"
+                                        data-input="children"
+                                >
+                                    −
+                                </button>
+                                <input
+                                        type="number"
+                                        id="children"
+                                        name="children"
+                                        min="0"
+                                        max="10"
+                                        value="0"
+                                />
+                                <button
+                                        type="button"
+                                        class="number-btn plus"
+                                        data-input="children"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="error-message" id="guestsError"
+                    >At least 1 adult is required</span
+                    >
+                </div>
+            </div>
+
+            <div class="form-row full-width">
+                <div class="form-group">
+                    <label for="specialRequests">
+                        Special Requests
+                        <span style="color: var(--color-text-light); font-weight: 300"
+                        >(Optional)</span
+                        >
+                    </label>
+                    <textarea
+                            id="specialRequests"
+                            name="specialRequests"
+                            placeholder="Dietary requirements, accessibility needs, early check-in requests, etc."
+                    ></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Complete Reservation</span>
+            </button>
+
+            <div class="success-message" id="successMessage">
+                <h3>Reservation Confirmed!</h3>
+                <p>
+                    Thank you for choosing our hotel. A confirmation email will be
+                    sent shortly.
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="./js/script.js"></script>
+</body>
+</html>
