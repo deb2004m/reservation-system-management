@@ -5,8 +5,8 @@ WORKDIR /app
 # Copy the wrapper and pom first (helps with caching dependencies)
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
 RUN chmod +x mvnw
+RUN ./mvnw dependency:go-offline
 
 # Copy source and build
 COPY src ./src
