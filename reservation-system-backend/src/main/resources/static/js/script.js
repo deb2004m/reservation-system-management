@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Sending to backend:", data);
 
-    fetch("/api/reservations", {
+    fetch("https://reservation-system-management-spcl-task-2.onrender.com/api/reservations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
